@@ -1,0 +1,166 @@
+import random
+import math
+
+print("Hi there ,I am One for All I contains all the projects and games that have been created yet")
+print("")
+
+user_name = input("Hey There ! Enter your Name : ")
+
+# guessing game
+def guessing_game():
+    print("")
+    print("Guesssing Game")
+    print("")
+    print("Hello There ! Welcome to the Guessing Game")
+    print("Hello " + user_name + " Enjoy the Game")
+    print("Let's Start the Game")
+    guessed_number = str(random.randint(1, 100))
+    user_choice_number = str(input("Enter a Number between 1 to 100 : "))
+
+    # getting th results of the player
+
+    if user_choice_number == guessed_number:
+
+        print("Winner Winner Chicken Dinner " + user_name + " You won the Match.")
+    elif user_choice_number > "100" :
+        print("\n")
+        print("Don't mess with me")
+        print("use a number between 1 to 100")
+    elif user_choice_number < guessed_number:
+        print("Your Guess is Too Low")
+        print("The Number is " + guessed_number)
+        print("Your Guessed Number is " + user_choice_number)
+    elif user_choice_number > guessed_number:
+        print("Your Guess is Too High")
+        print("The Number is " + guessed_number)
+        print("Your Guessed Number is " + user_choice_number)
+
+print("")
+#health potion
+
+def health_potion():
+    print("")
+    print("Health Potion")
+    print("")
+    health = random.randint(1,45)
+    potion = random.randint(1,55)
+    health = health + potion
+    if health == 100:
+       print('Wow This is Interesting This is fascinating You Got 100% heath')
+    else:
+        print("You got " ,health,"%")
+
+
+
+
+
+
+#survival game
+print("")
+def survival_game():
+    print("")
+    # Made By Manvendra Rajpoot(Ankit Rajpoot)
+    import random
+
+    biome = ('Forest', 'Desert', 'Snowy Area', 'Swamp')
+
+    food = ['fish', 'meat', 'berries']
+
+    forest_predators = ['bears', 'wolves', 'coyotes', 'foxes']
+
+    desert_predators = ['snakes', 'vultures', 'coyotes', 'bobcat']
+
+    snowy_predators = ['wolves', 'bears', 'tigers']
+
+    swamp_predators = ['alligators', 'mosquitos']
+
+    forest_shelter = ['cave', 'tree', 'hut']
+
+    desert_shelter = ['hut', 'small cave']
+
+    snow_shelter = ['igloo', 'cave']
+
+    swamp_shelter = ['cave', 'tree', 'hut']
+
+    how_long = ['1 day', '2 days', '3 days', '4 days', '5 days', '6 days', '1 week', '2 weeks', '3 week', '1 month']
+    print("Survival Game")
+    print('')
+    print("Hello " + user_name + " ,Welcome To Real Life Simulator ,Please choose your biome from the list below ")
+    print(biome)
+    user_biome_choice = input("Enter your desired biome : ").capitalize().strip()
+    print('')
+    print("Hello " + user_name + " Choose your food from the list below : ")
+    print(food)
+    user_food_choice = input("Enter your desired food : ").capitalize().strip()
+    print('')
+
+    if user_biome_choice == 'Forest':
+        predator_choice = random.choice(forest_predators)
+        shelter_choice = random.choice(forest_shelter)
+    elif user_biome_choice == 'Desert':
+        predator_choice = random.choice(desert_predators)
+        shelter_choice = random.choice(desert_shelter)
+    elif user_biome_choice == 'Snowy Area':
+        predator_choice = random.choice(snowy_predators)
+        shelter_choice = random.choice(snow_shelter)
+    elif user_biome_choice == 'Swamp':
+        predator_choice = random.choice(swamp_predators)
+        shelter_choice = random.choice(swamp_shelter)
+    print("")
+
+    def live():
+        live_choice = random.randint(1, 4)
+        if live_choice == 4:
+            print('You did not Survive, Cause of Death: The ' + user_food_choice + ' was poisionous')
+        elif live_choice == 3:
+            print('You did not Survive, Cause of Death: ' + predator_choice + ' attacked you!')
+        elif live_choice == 2:
+            print('You did not Survive, Cause of Death: Water Pollution')
+        elif live_choice == 1:
+            print(
+                'You survived! The ' + user_food_choice + ' was a good source of food and the ' + predator_choice + ' left you alone')
+
+    def main():
+        print('SURVIVAL')
+        print('')
+        print('You are lost in a ' + user_biome_choice)
+        print('You are living in a ' + shelter_choice)
+        print('Your main food source is ' + user_food_choice)
+        print('The main predator in the surrounding area are ' + predator_choice)
+        how_long_choice = random.choice(how_long)
+        print(how_long_choice + ' later')
+        live()
+        print('')
+        print('Every journey begins with a single step.We just have to have patience!')
+        print('')
+        print('For a different survival, press the run button again!')
+        print('')
+        print('Hope You love that Game!')
+        print('')
+
+    main()
+
+
+
+projects = ["survival game" ,"health potion" ,"guessing game"]
+
+print("Choose from the list below to open up any project")
+print("")
+print(projects)
+print("")
+
+
+
+
+while True:
+    user_project_choice = str(input(user_name + " Choose which project do you want to see : "))
+
+    if user_project_choice == "survival game":
+      print(survival_game())
+    elif user_project_choice == "health potion":
+      print(health_potion())
+    elif user_project_choice == "guessing game":
+      print(guessing_game())
+    else:
+      print("Don't mess with me")
+      break
